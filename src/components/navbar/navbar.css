@@ -1,0 +1,110 @@
+/* Aseguramos que el navbar abarca toda la pantalla horizontal */
+.navbar {
+    width: 100%;
+    background: linear-gradient(90deg, #0050a0, #0073e6);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin: 0;  /* Sin márgenes para ocupar toda la pantalla */
+    padding: 0;
+  }
+  
+  /* Eliminamos restricciones de ancho para que el contenedor sea 100% */
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;         /* Ocupa el 100% del ancho */
+    padding: 0 24px;     /* Espaciado lateral */
+  }
+  
+  /* Logo */
+  .navbar-logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Icono del menú (hamburguesa) */
+  .menu-icon {
+    display: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+  /* Lista de navegación */
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+  }
+  
+  /* Elementos del menú */
+  .nav-item {
+    margin-right: 1.5rem;
+  }
+  
+  /* Último elemento sin margen derecho */
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+  
+  /* Enlaces */
+  .nav-links {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover en enlaces */
+  .nav-links:hover {
+    color: #ffcc00;
+  }
+  
+  /* Responsive: menú móvil */
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+    
+    .nav-menu {
+      flex-direction: column;
+      width: 50%;
+      height: auto;
+      align-items: center;
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      opacity: 0;
+      transition: all 0.5s ease;
+      background: linear-gradient(90deg, #0050a0, #0073e6);
+    }
+    
+    .nav-menu.active {
+      left: 0;
+      opacity: 1;
+    }
+    
+    .nav-item {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      height: 60px;
+      line-height: 60px;
+    }
+    
+    .nav-links {
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
