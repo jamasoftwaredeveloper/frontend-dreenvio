@@ -59,28 +59,33 @@ const ProductList = () => {
     <>
       {specialPriceUser && (
         <div className="user-product-card">
-          <h2>El usuario seleccionado está asociado a:</h2>
+          <h2>El usuario seleccionado está asociado a</h2>
+          <button className="info-btn" onClick={() => setSpecialPriceUser(null)}>
+            Limpiar
+          </button>
           <hr />
-          <p className="product-name">
-            <b>Usuario:</b> {specialPriceUser.user.fullName}
-            <br />
-            <b>Producto:</b> {specialPriceUser.product.name}
-            <br />
-            <b>Precio del producto:</b> ${specialPriceUser.product.price}
-            <br />
-            <b>Precio especial:</b> $
-            {specialPriceUser.special_price.$numberDecimal}
-            <br />
-          </p>
-          <hr />
+          {specialPriceUser.map((item, index) => (
+            <div key={index}>
+              <p className="product-name">
+                <b>Usuario:</b> {item.user.fullName}
+                <br />
+                <b>Producto:</b> {item.product.name}
+                <br />
+                <b>Precio del producto:</b> ${item.product.price}
+                <br />
+                <b>Precio especial:</b> ${item.special_price.$numberDecimal}
+                <br />
+              </p>
+              <hr />
+            </div>
+          ))}
         </div>
       )}
-      {products.length === 0 ? (
+      {products?.length === 0 ? (
         <p>Cargando productos...</p>
       ) : (
         <div>
           <h2>Productos</h2>
-
           <form onSubmit={handleSearch}>
             <label>Usuario</label>
             <select
@@ -90,12 +95,13 @@ const ProductList = () => {
               required
             >
               <option value="">Seleccionar a Usuario</option>
-              {users.map((user) => (
+              {users?.map((user) => (
                 <option key={user._id} value={user._id}>
                   {user?.fullName || ""}
                 </option>
               ))}
             </select>
+
             <button type="submit" className="success-btn">
               Validar Usuario
             </button>

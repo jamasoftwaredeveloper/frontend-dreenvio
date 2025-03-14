@@ -11,9 +11,7 @@ const ProductTable = ({ products }) => {
       label: "Price",
       field: "price",
       render: (value) => {
-        if (value.$numberDecimal) {
-          console.log("entro");
-          
+        if (value.$numberDecimal) {          
           return `$${value.$numberDecimal}`;
         }
         return `$${value}`;

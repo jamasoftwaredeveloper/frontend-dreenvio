@@ -23,6 +23,6 @@ export const deleteSpecialPrice = async (id) => {
 };
 
 export const validateSpecialPrice = async (id) => {
-  const response = await axios.get(`${API_URL}/special-prices/validateSpecialPrice/${id}`);
+  const response = await axios.get(`${API_URL}/special-prices/validate-special-price/${id}`);
   return response.data;
 };
