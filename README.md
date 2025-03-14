@@ -27,6 +27,7 @@ Este proyecto utiliza React junto con Vite para proporcionar un entorno de desar
 - **React**: Una biblioteca popular para construir interfaces de usuario, conocida por su flexibilidad y rendimiento.
 - **ESLint**: Utilizado para mantener la calidad del código y asegurar consistencia en el estilo de codificación.
 - **Babel/SWC**: Herramientas para la transpilación de código, elegidas por su compatibilidad con Fast Refresh.
+- **JavaScript**: Elegido por su amplia adopción y soporte en la comunidad, así como su flexibilidad y facilidad de uso. JavaScript permite un desarrollo rápido y es compatible con una gran cantidad de bibliotecas y frameworks, lo que facilita la integración y el desarrollo de nuevas funcionalidades.
 
 ## Descripción de la estructura del proyecto
 
@@ -38,6 +39,3 @@ Este proyecto utiliza React junto con Vite para proporcionar un entorno de desar
 - `vite.config.js`: Configuración de Vite.
 - `eslintrc.js`: Configuración de ESLint.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
